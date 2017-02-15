@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+//================================= 初始化 ===================================//
+html {
+  font-size: 20px;
+}
+
+body {
+  /*使用无衬线字体*/
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, sans-serif;
+}
+
+a, img {
+  /*禁止长按链接与图片弹出菜单*/
+  -webkit-touch-callout: none;
+}
+
+html, body {
+  /*禁止选中文本*/
+  -webkit-user-select: none;
+  user-select: none;
+  min-height: 100%;
+  height: 100%;
+}
+
+button, input, optgroup, select, textarea {
+  /*去掉webkit默认的表单样式*/
+  -webkit-appearance: none;
+}
+
+a, button, input, optgroup, select, textarea {
+  /*去掉a、input和button点击时的蓝色外边框和灰色半透明背景*/
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input::-webkit-input-placeholder {
+  /*修改webkit中input的planceholder样式*/
+  color: #ccc;
+}
+
+input:focus::-webkit-input-placeholder {
+  /*修改webkit中focus状态下input的planceholder样式*/
+  color: #f00;
+}
+
+body {
+  /*禁止IOS调整字体大小*/
+  -webkit-text-size-adjust: 100% !important;
+}
+
+input::-webkit-input-speech-button {
+  /*隐藏Android的语音输入按钮*/
+  display: none;
+}
+
+/*清除浮动 clear & clearfix*/
+.clear {
+  display: block !important;
+  clear: both !important;
+  float: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  height: 0;
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+  height: 0;
+}
+
+//============================== 项目专用 ==================================//
+
+.view {
+  transition: all .5s cubic-bezier(.55, 0, .1, 1);
+}
+
+//================================ Vue专用 ================================//
+
+/*fade动画 begin*/
+/*fade 进入后 ＆ 离开后 状态*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .3s ease;
+}
+
+/*fade 进入前 ＆ 离开后*/
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+
+/*slide动画 begin*/
+/*slide-left 进入前 状态*/
+/*slide-right 离开后 状态*/
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(30px, 0);
+  transform: translate(30px, 0);
+}
+
+/*slide-left 离开后 状态*/
+/*slide-right 进入前 状态*/
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  -webkit-transform: translate(-30px, 0);
+  transform: translate(-30px, 0);
+}
+
+/*slide-down 进入的开始状态 ＆ 离开的结束状态*/
+.slide-down-enter, .slide-down-leave-active {
+  opacity: 0;
+  -webkit-transform: translate(0, -30px);
+  transform: translate(0, -30px);
+}
+
+/*slide-down 进入的结束状态 ＆ 离开的开始状态*/
+.slide-down-enter-active, .slide-down-leave {
+  transition: all .5s ease;
+}

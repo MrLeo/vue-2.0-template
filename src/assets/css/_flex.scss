@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+.flex {
+  /*定义为flexbox的“父元素”*/
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+
+  &-all__center {
+    /*子元素沿主轴对齐方式居中*/
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    /*子元素沿侧轴对齐方式垂直居中*/
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  &-column__between {
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+  &-column__around {
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+  }
+
+  /*指定主轴的伸缩流方向是横向的*/
+  &-row {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+  }
+
+  /*指定主轴的伸缩流方向是纵向的*/
+  &-column {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+
+}

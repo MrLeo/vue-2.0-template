@@ -1,0 +1,113 @@
+@charset "UTF-8";
+@import "fun";
+$size: rem(36px);
+.jx {
+  &-loading {
+    position: fixed;
+    z-index: 999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: rem(420px);
+    min-height: rem(226px);
+    padding: $size;
+    background-color: rgba(0,0,0,.5);
+    border-radius: rem(10px);
+    text-align: center;
+    color: #FFF;
+    &-effect {
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      width: 55px;
+      height: 55px;
+      margin: $size 0;
+      span {
+        position: absolute;
+        display: inline-block;
+        width: 15px;
+        height: 5px;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        background: #FFF;
+        -webkit-animation: load 1.04s ease infinite;
+        animation: load 1.04s ease infinite;
+        &:nth-child(1) {
+          left: 0;
+          top: 50%;
+          margin-top: -2.5px;
+          -webkit-animation-delay: 0.13s;
+          animation-delay: 0.13s;
+        }
+        &:nth-child(2) {
+          left: 5.5px;
+          top: 10.5px;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+          -webkit-animation-delay: 0.26s;
+          animation-delay: 0.26s;
+        }
+        &:nth-child(3) {
+          left: 50%;
+          top: 5px;
+          margin-left: -7.5px;
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          -webkit-animation-delay: 0.39s;
+          animation-delay: 0.39s;
+        }
+        &:nth-child(4) {
+          top: 10.5px;
+          right: 5.5px;
+          -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+          -webkit-animation-delay: 0.52s;
+          animation-delay: 0.52s;
+        }
+        &:nth-child(5) {
+          right: 0;
+          top: 50%;
+          margin-top: -2.5px;
+          -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+          -webkit-animation-delay: 0.65s;
+          animation-delay: 0.65s;
+        }
+        &:nth-child(6) {
+          right: 5.5px;
+          bottom: 10.5px;
+          -webkit-transform: rotate(225deg);
+          transform: rotate(225deg);
+          -webkit-animation-delay: 0.78s;
+          animation-delay: 0.78s;
+        }
+        &:nth-child(7) {
+          bottom: 5px;
+          left: 50%;
+          margin-left: -7.5px;
+          -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+          -webkit-animation-delay: 0.91s;
+          animation-delay: 0.91s;
+        }
+        &:nth-child(8) {
+          bottom: 10.5px;
+          left: 5.5px;
+          -webkit-transform: rotate(315deg);
+          transform: rotate(315deg);
+          -webkit-animation-delay: 1.04s;
+          animation-delay: 1.04s;
+        }
+      }
+      @-webkit-keyframes load {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+}
