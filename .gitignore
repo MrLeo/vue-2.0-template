@@ -13,4 +13,5 @@ target/
 .idea/
 .git/
 .history/
+.vscode/
 *.log
