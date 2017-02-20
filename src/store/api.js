@@ -4,9 +4,21 @@
  *
  * Created with JetBrains WebStorm.
  */
-import Fetch from '../utils/Fetch'
+
 export default {
     getCatalogList(){
-        return Fetch('../../static/pages/Catalog.json')
+        return new Promise(function(resolve,reject){
+            const xhr = new XMLHttpRequest()
+            xhr.open("GET",'../../static/pages/Catalog.json')
+            xhr.onreadystatechange = function(response){
+                if(response.target.readyState==4 && response.target.status==200){
+                    resolve(JSON.parse(response.target.responseText))
+                }
+            }
+            xhr.onerror=(e)=>{
+                reject()
+            }
+            xhr.send()
+        })
     }
 }

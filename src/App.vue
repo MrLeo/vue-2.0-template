@@ -62,6 +62,19 @@
             document.addEventListener("DOMContentLoaded", fn, false)
 
             this.getCatalog()
+
+            //region 调试控制台
+            /**
+            * 调试控制台
+            * https://github.com/liriliri/eruda/blob/master/doc/README_CH.md
+            */
+            // (function () {
+            //     var src = '//liriliri.github.io/eruda/eruda.min.js';
+            //     if (!/dev=true/.test(window.location) && localStorage.getItem('active-eruda') != 'true') return;
+            //     document.write('<scr' + 'ipt src="' + src + '"></scr' + 'ipt>');
+            //     document.write('<scr' + 'ipt>eruda.init();</scr' + 'ipt>');
+            // })()
+            //endregion
         }
     }
 </script>

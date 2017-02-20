@@ -14,6 +14,7 @@
  * @return {*}
  */
 function parseJSON(response) {
+    debugger
     return response.json()//生成JSON.parse(responseText)的结果
 }
 
